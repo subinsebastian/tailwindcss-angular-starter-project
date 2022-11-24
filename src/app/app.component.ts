@@ -9,9 +9,7 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  START_TIMER_AT = 10;
-
-  interval$ = timer(0, 1000).pipe(tap(console.log));
+  readonly START_TIMER_AT = 10;
 
   missionStatus$ = new BehaviorSubject<
     'yet to start' | 'started' | 'aborted' | 'liftoff'
