@@ -1,1 +1,19 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<div class="bg-yellow-200 flex justify-center items-center h-screen">
+  <div class="text-center">
+    <h1 class="text-xl font-bold font-mono">Rocket Launch Sequence 🚀</h1>
+
+    <h1 class="text-2xl my-3 font-bold">{{ countdown$ | async }}</h1>
+
+    <button class="bg-blue-200 text-base rounded px-3 py-1 mx-1">
+      Start T-10 seq.
+    </button>
+    <button class="bg-red-200 text-base rounded px-3 py-1 mx-1">
+      Abort Mission
+    </button>
+
+    <h4 class="mt-2 text-base">
+      mission status - <b> {{ missionStatus$ | async | titlecase }}</b
+      >!!
+    </h4>
+  </div>
+</div>
