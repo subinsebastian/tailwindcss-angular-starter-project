@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { timer, BehaviorSubject, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +9,6 @@ import { tap } from 'rxjs/operators';
 })
 export class AppComponent {
   readonly START_TIMER_AT = 10;
-
-  missionStatus$ = new BehaviorSubject<
-    'yet to start' | 'started' | 'aborted' | 'liftoff'
-  >('yet to start');
 
   countdown$ = of(this.START_TIMER_AT);
 }
